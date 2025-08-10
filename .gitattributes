@@ -1,0 +1,5 @@
+# Treat these as binary
+*.glb binary
+*.gltf binary
+*.mp4 binary
+*.mov binary
