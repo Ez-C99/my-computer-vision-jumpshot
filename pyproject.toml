@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-computer-vision-jumpshot"
+version = "0.1.0"
+description = "PoC pipeline for basketball jumpshot analysis (2D pose, simple detection/tracking, optional 3D lifting)."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { file = "LICENCE" }
+authors = [{ name = "Ezra Chamba" }]
+keywords = ["computer-vision", "pose-estimation", "basketball", "sports-analytics"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: MacOS :: MacOS X",
+]
+
+[project.urls]
+Homepage = "https://example.com"
+Repository = "https://example.com/repo"
+Issues = "https://example.com/repo/issues"
+
+[project.scripts]
+jumpshot = "my_computer_vision_jumpshot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["my_computer_vision_jumpshot*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["my_computer_vision_jumpshot"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "W"]
+ignore = []
+target-version = "py311"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

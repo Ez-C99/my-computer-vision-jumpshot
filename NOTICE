@@ -1,0 +1,20 @@
+my-computer-vision-jumpshot
+Copyright (c) 2025 Ezra Chamba
+
+This product includes software developed by third parties:
+
+- MMPose (OpenMMLab): Apache-2.0
+  https://pypi.org/project/mmpose/
+- MMEngine / MMCV (OpenMMLab): Apache-2.0
+  https://pypi.org/project/mmengine/
+  https://github.com/open-mmlab/mmcv
+- YOLOX (Megvii): Apache-2.0
+  https://github.com/Megvii-BaseDetection/YOLOX
+- ByteTrack: MIT
+  https://github.com/FoundationVision/ByteTrack
+- trimesh: MIT
+  https://pypi.org/project/trimesh/
+- three.js: MIT
+  https://threejs.org/
+
+Binary model weights and external datasets are not included and remain subject to their respective licences or terms of use.

@@ -1,0 +1,84 @@
+THIRD-PARTY NOTICES
+===================
+
+This product includes, depends upon, or can optionally integrate with the third-party components listed below.
+The original copyright and licence notices for these components are provided in:
+  - ./third_party/licenses/   (populated via scripts below)
+  - LINKS in each entry to the upstream licence file
+
+These notices are provided for compliance and attribution only. They do not modify the licences that apply to this project or to the third-party materials.
+
+----------------------------------------------------------------------
+CORE PYTHON LIBRARIES
+----------------------------------------------------------------------
+
+• PyTorch  — BSD-3-Clause
+  Upstream: https://github.com/pytorch/pytorch/blob/main/LICENSE
+
+• MMEngine — Apache License 2.0
+  Upstream: https://github.com/open-mmlab/mmengine/blob/main/LICENSE
+
+• MMCV / mmcv-lite — Apache License 2.0
+  NOTE: Some specific ops in MMCV carry other licences; review MMCV’s LICENSES.md before enabling optional components.
+  Upstream: https://github.com/open-mmlab/mmcv
+
+• MMDetection — Apache License 2.0
+  Upstream: https://github.com/open-mmlab/mmdetection/blob/main/LICENSE
+
+• MMPose — Apache License 2.0
+  Upstream: https://github.com/open-mmlab/mmpose/blob/main/LICENSE
+
+• OpenMIM — Apache License 2.0
+  Upstream: https://github.com/open-mmlab/mim
+
+• Supervision — MIT License
+  Upstream: https://github.com/roboflow/supervision/blob/main/LICENSE.md
+
+• ByteTrack (reference implementation/algorithm) — MIT License
+  Upstream: https://github.com/ifzhang/ByteTrack/blob/main/LICENSE
+
+----------------------------------------------------------------------
+WEB / 3D VIEWER (DEMO)
+----------------------------------------------------------------------
+
+• three.js — MIT License
+  Upstream: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+
+• Babylon.js — Apache License 2.0
+  Upstream: https://github.com/BabylonJS/Babylon.js/blob/master/LICENSE.md
+
+• Filament (optional) — Apache License 2.0
+  Upstream: https://github.com/google/filament/blob/main/LICENSE
+
+• glTF 2.0 file format — Royalty-free standard by The Khronos Group
+  Info: https://www.khronos.org/gltf/
+
+----------------------------------------------------------------------
+DATASETS & WEIGHTS (IF USED)
+----------------------------------------------------------------------
+
+• MS-COCO:
+  - Annotations: Creative Commons Attribution 4.0 (CC BY 4.0)
+  - Images: copyright remains with original owners; respect the hosting site’s terms (e.g., Flickr).
+  See: https://github.com/nightrome/cocostuff#licensing
+
+• CrowdHuman:
+  - Code repo licence: MIT
+  - Some mirrored distributions indicate CC BY 4.0 — validate your source.
+  See: https://github.com/sshao0516/CrowdHuman/blob/master/LICENSE
+
+----------------------------------------------------------------------
+HOW WE COLLECTED THESE NOTICES
+----------------------------------------------------------------------
+
+Python:
+  pip install -U pip-licenses
+  pip-licenses --from=mixed --with-urls --with-authors \
+    --with-license-file --with-notice-file --format=json \
+    --output-file third_party/licenses/pip-licenses.json
+
+Node/web (if you add a viewer package.json):
+  npx license-checker --summary > third_party/licenses/npm-licenses.txt
+  # or generate a full third-party-notices file from your bundle with @rnx-kit/third-party-notices
+
+Keep these files with your release artefacts if you redistribute wheels/bundles.
