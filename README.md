@@ -15,7 +15,7 @@ A proof-of-concept pipeline to analyse a basketball jump shot:
 
 1) **Python & PyTorch**
    - Create a venv and install PyTorch per the official guide for your OS/CUDA.
-   - Then run the helper script below which installs OpenMMLab components via **OpenMIM** to pull the correct wheels. (This prevents common build issues.) :contentReference[oaicite:2]{index=2}
+   - Then run the helper script below which installs OpenMMLab components via **OpenMIM** to pull the correct wheels. (This prevents common build issues.)
 
 2) **Initialise the environment**
 
