@@ -1,0 +1,23 @@
+# Core (macOS Intel compatible)
+torch==2.2.2
+torchvision==0.17.2
+
+# Pose
+mediapipe==0.10.14
+
+# CV / utils
+# (opencv-python removed; mediapipe brings opencv-contrib-python which includes cv2)
+numpy==1.26.4
+scipy==1.13.1
+tqdm==4.66.4
+pyyaml==6.0.1
+
+# Logging/UI (pinned to satisfy norfair<->rich constraint)
+rich==12.6.0
+
+# Tracking (MIT)
+norfair==2.2.0
+
+# Small helpers
+matplotlib==3.8.4
+pydantic==2.7.1
