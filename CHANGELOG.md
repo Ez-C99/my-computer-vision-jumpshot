@@ -6,9 +6,39 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 
 ## [Unreleased]
 
-- First runnable end-to-end demo CLI (detect → pose → track → metrics).
-- Optional 2D→3D lift with VideoPose3D adapter.
-- Ball/hoop detection upgrade path (fine-tune small detector on custom clips).
+### Planned
+
+- **A – Metrics pass:** Add per-shot kinematics (e.g., wrist/elbow angles, release timing proxy) and write to `metrics.json`.
+- **B – TorchVisionDetector:** Optional person/hoop/ball regions to crop pose input and seed ball candidates for tracking.
+- **C – Ball tracking (Norfair):** Simple Kalman-based tracker for ball trajectory; derive release/flight metrics.
+- **D – 2D→3D lift (VideoPose3D):** Integrate lifting for 3D joints and basic kinematic features (segment angles, angular velocities).
+
+---
+
+## [0.1.1] - 2025-08-12
+
+### Added
+
+- **MediaPipe pose wrapper** (`my_computer_vision_jumpshot/inference/pose_mediapipe.py`) returning 33-landmark skeleton; basic adapters and typing.
+- **Norfair tracking wrapper** (`tracking/norfair_wrapper.py`) with config stub and association scaffolding.
+- **CLI scaffolding** (`my_computer_vision_jumpshot/cli.py`) and smoke tests for imports.
+- **IO utilities** (`io/video_utils.py`, `io/serialise.py`) for safe video decode and JSON/YAML helpers.
+- **Scripts:** `scripts/initialise_environment.sh`, `scripts/fetch_third_party.sh`, `scripts/prepare_examples.sh`.
+- **Docs:** Updated `README.md` with step-by-step install/run; project structure aligned to the new stack.
+
+### Changed
+
+- **Dependencies pinned for easy install:** `torch==2.2.2`, `torchvision==0.17.2`, `mediapipe==0.10.14`. Resolved Norfair/Rich conflict by pinning **`rich==12.6.0`** (Norfair requires `<13`).
+- **Third-party:** Cloned `third_party/VideoPose3D` (commit to be pinned after first successful run).
+
+### Fixed
+
+- **Dependency resolution issues** (Norfair vs Rich) and **Torch/TorchVision version mismatch** on pip.
+
+### Notes
+
+- The stack remains **pure-pip, CPU-friendly** (no compiled-ops like MMCV), to keep the PoC unblocked.
+- Detection is currently optional; TorchVision detectors will be introduced in the next iteration (see “Planned”).
 
 ## [0.1.0] - 2025-08-11
 
